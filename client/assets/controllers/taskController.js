@@ -12,8 +12,7 @@ app.controller("taskController", ["$scope", "taskFactory", function($scope, task
 
   $scope.changeStatus = function(id){
     taskFactory.changeStatus(id, function(data){
-      console.log(data)
-      index();
+      $scope.index();
     })
   }
 

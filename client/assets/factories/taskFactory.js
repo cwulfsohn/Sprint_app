@@ -11,7 +11,6 @@ app.factory("taskFactory", ["$http", function($http){
       var toDo = [];
       var Doing = [];
       var Done = [];
-      console.log(data.data.tasks.tasks)
       for(var i = 0; i < data.data.tasks.length; i++){
         if(data.data.tasks[i].status == 'toDo'){
           toDo.push(data.data.tasks[i])
@@ -27,7 +26,6 @@ app.factory("taskFactory", ["$http", function($http){
     })
   }
   factory.changeStatus = function(id, callback){
-    console.log(id)
     $http.put("/tasks/"+id).then(function(data){
       callback(data.data)
     })
