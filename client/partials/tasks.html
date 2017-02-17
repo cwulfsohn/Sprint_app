@@ -1,0 +1,48 @@
+<h1 class="text-center">Agile Sprint Planner</h1>
+<hr>
+<div id="toDo">
+  <h3 class="text-center">To Do</h3>
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr ng-repeat="toDoTask in toDo">
+        <td>{{toDoTask.description}}</td>
+        <td><button type="button" name="button" class="btn btn-info">Doing</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div ng-hide="toDo">
+    <h4 class="text-center">You ain't got nuthin ta-do</h4>
+  </div>
+</div>
+<hr>
+<div id="Doing">
+  <h3 class="text-center">Doing</h3>
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr ng-repeat="DoingTask in Doings">
+        <td>{{DoingTask.description}}</td>
+        <td><button type="button" name="button" class="btn btn-success">Done</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div ng-hide="Doing">
+    <h4 class="text-center">You ain't doin a thang</h4>
+  </div>
+</div>
+<hr>
+<div id="Done">
+  <h3 class="text-center">Done</h3>
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr ng-repeat="DoneTask in toDo">
+        <td>{{DoneTask.description}}</td>
+        <td><button type="button" name="button" class="btn btn-warning">Hide</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div ng-hide="Done">
+    <h4 class="text-center">You ain't dun nuthin</h4>
+  </div>
+</div>
+<hr>
+<a class="btn btn-primary span" href="#!/new">Create a Task</a>
