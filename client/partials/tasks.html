@@ -7,15 +7,16 @@
       <tr>
         <th>Description</th>
         <th>Due Date</th>
-        <th>Priority</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="toDoTask in toDoTasks">
-        <td>{{toDoTask.description}}</td>
+        <td>
+          <div class="{{toDoTask.priority}}"></div>
+          {{toDoTask.description}}
+        </td>
         <td>{{toDoTask.due_date | date}}</td>
-        <td>{{toDoTask.priority}}</td>
         <td><button type="button" name="button" class="btn btn-info" ng-click="changeStatus(toDoTask._id)" >Doing</button></td>
       </tr>
     </tbody>
@@ -32,15 +33,13 @@
       <tr>
         <th>Description</th>
         <th>Due Date</th>
-        <th>Priority</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="DoingTask in DoingTasks">
-        <td>{{DoingTask.description}}</td>
+        <td><div class="{{DoingTask.priority}}"></div> {{DoingTask.description}}</td>
         <td>{{DoingTask.due_date | date}}</td>
-        <td>{{DoingTask.priority}}</td>
         <td><button type="button" name="button" class="btn btn-success" ng-click="changeStatus(DoingTask._id)">Done</button></td>
       </tr>
     </tbody>
@@ -57,15 +56,13 @@
       <tr>
         <th>Description</th>
         <th>Due Date</th>
-        <th>Priority</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="DoneTask in DoneTasks">
-        <td>{{DoneTask.description}}</td>
+        <td><div class="{{DoneTask.priority}}"></div> {{DoneTask.description}}</td>
         <td>{{DoneTask.due_date | date }}</td>
-        <td>{{DoneTask.priority}}</td>
         <td><button type="button" name="button" class="btn btn-warning" ng-click="changeStatus(DoneTask._id)">Hide</button></td>
       </tr>
     </tbody>
@@ -76,3 +73,6 @@
 </div>
 <hr>
 <a class="btn btn-primary span" href="#!/new">Create a Task</a>
+<div id="Awesome">
+
+</div>
